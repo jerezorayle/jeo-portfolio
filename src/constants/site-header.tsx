@@ -1,0 +1,40 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/works", label: "Works" },
+  { href: "/contact", label: "Contact" },
+];
+
+export function SiteHeader() {
+  const pathname = usePathname();
+
+  return (
+    <div className="flex h-16 items-center justify-between mx-60">
+        <h6 className="text-md font-semibold">Jerez Orayle</h6>
+        <NavigationMenu>
+          <NavigationMenuList className="flex gap-4">
+            {navLinks.map((link) => (
+              <NavigationMenuItem key={link.href}>
+                <Link
+                  href={link.href}
+                  className={cn(
+                    "text-md font-bold transition-colors hover:text-primary px-5",
+                    pathname === link.href ? "text-primary" : "text-muted-foreground"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
+  );
+}
