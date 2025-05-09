@@ -2,16 +2,23 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { ArrowRightFromLine, Github, Linkedin } from "lucide-react";
 import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
     const headers = document.querySelectorAll("h1");
+    const button = document.querySelector(".button-fade");
+
     headers.forEach((header, index) => {
       setTimeout(() => {
         header.classList.add("slide-in");
       }, index * 300);
     });
+
+    setTimeout(() => {
+      button?.classList.add("fade-in");
+    }, 1600);
 
     const avatar = document.querySelector(".avatar-fade");
     setTimeout(() => {
@@ -21,27 +28,34 @@ export default function Home() {
 
   return (
     <div>
-      <div className="grid grid-cols-2 items-center justify-center h-[90vh]">
-        <div className="font-bold text-6xl text-left leading-20 font-proxima">
+      <div className="grid grid-cols-2 items-center justify-center h-[86vh]">
+        <div className="font-bold text-6xl text-left leading-20">
           <h1 className="hidden-before">Hi,</h1>
           <h1 className="hidden-before">
             I am <span className="text-indigo-600">Jerez</span>.
           </h1>
           <h1 className="hidden-before">Software Engineer.</h1>
 
-          <Button variant="default" size="lg" className="my-16 bg-indigo-600">
-            Contact
-          </Button>
+          <div className="hidden-before button-fade">
+            <Button variant="outline" size="lg" className="my-16 text-indigo-600 border-indigo-600 border-2 font-bold hover:bg-indigo-600 hover:text-white">
+              <ArrowRightFromLine />
+              See My Works
+            </Button>
+          </div>
         </div>
 
         <div className="flex justify-end">
           <div className="avatar-fade hidden-before">
-            <Avatar className="w-145 h-175">
+            <Avatar className="w-142 h-168">
               <AvatarImage src="/front.png" alt="my-image" />
-              <AvatarFallback>JO</AvatarFallback>
             </Avatar>
           </div>
         </div>
+      </div>
+
+      <div className="flex gap-3">
+        <Button size="icon"><Linkedin/></Button>
+        <Button size="icon"><Github/></Button>
       </div>
 
       <style jsx>{`
