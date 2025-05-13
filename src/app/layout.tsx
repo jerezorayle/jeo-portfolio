@@ -21,14 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased`}
+        className={`${poppins.className} antialiased dark`}
       >
         <header className="w-full border-b bg-background flex-shrink-0">
           <SiteHeader />
         </header>
 
         <div className="w-full">
-          <main className="mx-60">{children}</main>
+          <main className="mx-60 mt-14">{children}</main>
         </div>
       </body>
     </html>

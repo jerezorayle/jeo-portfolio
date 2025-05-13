@@ -18,17 +18,23 @@ export default function Home() {
 
     setTimeout(() => {
       button?.classList.add("fade-in");
-    }, 1600);
+    }, 1800);
 
     const avatar = document.querySelector(".avatar-fade");
+    const avatarBg = document.querySelector(".avatar-bg-fade");
+
     setTimeout(() => {
       avatar?.classList.add("fade-in");
+    }, 900);
+
+    setTimeout(() => {
+      avatarBg?.classList.add("slide-in");
     }, 900);
   }, []);
 
   return (
     <div>
-      <div className="grid grid-cols-2 items-center justify-center h-[86vh]">
+      <div className="grid grid-cols-2 items-center justify-center h-[76vh]">
         <div className="font-bold text-6xl text-left leading-20">
           <h1 className="hidden-before">Hi,</h1>
           <h1 className="hidden-before">
@@ -37,7 +43,10 @@ export default function Home() {
           <h1 className="hidden-before">Software Engineer.</h1>
 
           <div className="hidden-before button-fade">
-            <Button variant="outline" size="lg" className="my-16 text-indigo-600 border-indigo-600 border-2 font-bold hover:bg-indigo-600 hover:text-white">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="my-16 text-indigo-600 border-indigo-600 border-2 font-bold hover:bg-indigo-600 hover:text-white dark:text-white dark:hover:bg-indigo-600 dark:hover:text-white">
               <ArrowRightFromLine />
               See My Works
             </Button>
@@ -46,9 +55,10 @@ export default function Home() {
 
         <div className="flex justify-end">
           <div className="avatar-fade hidden-before">
-            <Avatar className="w-142 h-168">
-              <AvatarImage src="/front.png" alt="my-image" />
+            <Avatar className="w-142 h-168 z-10 relative">
+              <AvatarImage src="/front-dark.png" alt="my-image" />
             </Avatar>
+            <div className="bg-white h-140 w-110 absolute top-8 left-8 z-0 rounded-full rotate-60 hidden-before avatar-bg-fade"></div>
           </div>
         </div>
       </div>
