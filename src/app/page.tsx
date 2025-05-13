@@ -55,10 +55,10 @@ export default function Home() {
 
         <div className="flex justify-end">
           <div className="avatar-fade hidden-before">
-            <Avatar className="w-142 h-168 z-10 relative">
+            <Avatar className="w-142 h-172 z-10 relative">
               <AvatarImage src="/front-dark.png" alt="my-image" />
             </Avatar>
-            <div className="bg-white h-140 w-110 absolute top-8 left-8 z-0 rounded-full rotate-60 hidden-before avatar-bg-fade"></div>
+            <div className="bg-white h-140 w-110 absolute top-10 left-8 z-0 rounded-full rotate-60 hidden-before avatar-bg-fade"></div>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@ export default function Home() {
       <style jsx>{`
         .hidden-before {
           opacity: 0;
-          transform: translateX(-30px);
+          transform: translateX(-50px);
         }
 
         .slide-in {
