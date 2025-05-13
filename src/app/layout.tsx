@@ -28,7 +28,7 @@ export default function RootLayout({
         </header>
 
         <div className="w-full">
-          <main className="mx-60 mt-14">{children}</main>
+          <main className="lg:mx-60 md:mx-40 sm:mx-20 xs:mx-10 mt-14">{children}</main>
         </div>
       </body>
     </html>

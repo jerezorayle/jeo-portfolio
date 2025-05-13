@@ -4,6 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import { useEffect } from "react";
+import "animate.css/animate.compat.css"
+import ScrollAnimation from "react-animate-on-scroll";
+import { Scroll } from "lucide-react";
 
 export default function About() {
 
@@ -12,13 +15,22 @@ export default function About() {
         const cover = document.querySelector(".cover-fade");
         const image = document.querySelector(".image-fade");
 
+        const cards = document.querySelectorAll(".card-slide");
+        console.log(cards);
+
+        cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add("slide-in-right");
+        }, index * 600);
+        });
+
         setTimeout(() => {
             cover?.classList.add("fade-in");
         }, 100);
 
         setTimeout(() => {
             image?.classList.add("slide-in");
-        }, 300);
+        }, 200);
         }, []);
         
     return (
@@ -37,26 +49,33 @@ export default function About() {
                     </div>
                 </div>
                 <div className="flex flex-col items-start justify-start gap-5">
-                    <Card className="w-[250px] border-none bg-background">
-                        <CardHeader className="font-bold text-start text-6xl">
-                            <CardTitle>10+</CardTitle>
-                            <CardDescription className="text-lg">Projects Completed</CardDescription>
-                        </CardHeader>
-                    </Card>
-                    <Card className="w-[250px] border-none bg-background">
-                        <CardHeader className="font-bold text-start text-6xl">
-                            <CardTitle>4+</CardTitle>
-                            <CardDescription className="text-lg">Certifications</CardDescription>
-                        </CardHeader>
-                    </Card>
-                    <Card className="w-[250px] border-none bg-background">
-                        <CardHeader className="font-bold text-start text-6xl">
-                            <CardTitle>5+</CardTitle>
-                            <CardDescription className="text-lg">Years of Experience</CardDescription>
-                        </CardHeader>
-                    </Card>
+                    <div className="hidden-before card-slide">
+                        <Card className="w-[250px] border-none bg-background">
+                            <CardHeader className="font-bold text-start text-6xl">
+                                <CardTitle>10+</CardTitle>
+                                <CardDescription className="text-lg">Projects Completed</CardDescription>
+                            </CardHeader>
+                        </Card>
+                    </div>
+                    <div className="hidden-before card-slide">   
+                        <Card className="w-[250px] border-none bg-background">
+                            <CardHeader className="font-bold text-start text-6xl">
+                                <CardTitle>4+</CardTitle>
+                                <CardDescription className="text-lg">Certifications</CardDescription>
+                            </CardHeader>
+                        </Card>
+                        </div>
+                    <div className="hidden-before card-slide">     
+                        <Card className="w-[250px] border-none bg-background">
+                            <CardHeader className="font-bold text-start text-6xl">
+                                <CardTitle>5+</CardTitle>
+                                <CardDescription className="text-lg">Years of Experience</CardDescription>
+                            </CardHeader>
+                        </Card>
+                    </div>
                 </div>
             </div>
+            
             <div className="flex flex-col items-start justify-start">
                 <h1 className="text-2xl font-bold uppercase mt-6">Biography</h1>
                 <p className="mt-4 text-md text-left">
@@ -68,33 +87,116 @@ export default function About() {
                     Now, I can apply the same approach I learned whenever I program, code, and build web/software applications especially when there a problem arising (eg. bugs, errors, inaccuracy, etc). 
                     I also learned to organize my way to make things easier, usable and efficient in the long run - applying software engineering principles I learned throughout the years of experience in coding.
                 </p>
-                <blockquote className="mt-6 border-l-4 pl-6 italic">
-                    "When you fall in love with the process rather than the product, you don’t have to wait to give yourself permission to be happy..."
+                <blockquote className="mt-6 border-l-6 pl-6 italic text-sm">
+                    “When you fall in love with the process rather than the product, you don’t have to wait to give yourself permission to be happy. You can be satisfied anytime your system is running. And a system can be successful in many different forms, not just the one you first envision.” — James Clear [Atomic Habits]
                 </blockquote>
             </div>
 
             <div>
-                <h1 className="text-2xl font-bold uppercase mt-6">Skills</h1>
-                <div className="flex flex-row gap-4 flex-wrap mt-10">
-                    <Badge className="p-1">C#, ASP .NET Core, Repository-Service Design Pattern</Badge>
-                    <Badge className="p-1">VueJS</Badge>
-                    <Badge className="p-1">React</Badge>
-                    <Badge className="p-1">Next.js, Node.js</Badge>
-                    <Badge className="p-1">HTML, CSS, JavaScript, TypeScript</Badge>
-                    <Badge className="p-1">Tailwind CSS, Bootstrap</Badge>
-                    <Badge className="p-1">Git, GitHub</Badge>
-                    <Badge className="p-1">Agile Methodologies</Badge>
-                    <Badge className="p-1">RESTful APIs</Badge>
-                    <Badge className="p-1">Software Development Life Cycle (SDLC)</Badge>
-                    <Badge className="p-1">Problem Solving</Badge>
-                    <Badge className="p-1">Analytical Thinking</Badge>
-                    <Badge className="p-1">Team Collaboration</Badge>
-                    <Badge className="p-1">Communication Skills</Badge>
-                </div>
+                <ScrollAnimation animateIn="slideInRight" animateOnce={true}>
+                    <h1 className="text-2xl font-bold uppercase mt-6">Skills</h1>
+                    <div className="flex flex-row gap-3 flex-wrap mt-10">
+                        <h3 className="text-sm">Strong Skills: </h3>
+                        <Badge className="p-1">C#, ASP .NET Core API, Entity Framework Core, LINQ, MVC</Badge>
+                        <Badge className="p-1">VueJS</Badge>
+                        <Badge className="p-1">ReactJS</Badge>
+                        <Badge className="p-1">Shadcn</Badge>
+                        <Badge className="p-1">Next.js, Node.js</Badge>
+                        <Badge className="p-1">HTML, CSS, JavaScript, TypeScript</Badge>
+                        <Badge className="p-1">Tailwind CSS, Bootstrap</Badge>
+                        <Badge className="p-1">SQL, NoSQL, MongoDB, ElasticSearch</Badge>
+                        <Badge className="p-1">JSON Web Tokens</Badge>
+                        <Badge className="p-1">Git, GitHub</Badge>
+                        <Badge className="p-1">Repository-Service Design Pattern, Onion Architecture, CQRS Design Pattern</Badge>
+                        <Badge className="p-1">Agile Methodologies</Badge>
+                        <Badge className="p-1">Object-Oriented Programming, Dependency Injection</Badge>
+                        <Badge className="p-1">RESTful APIs</Badge>
+                        <Badge className="p-1">Problem Solving</Badge>
+                        <Badge className="p-1">Analytical Thinking</Badge>
+                        <Badge className="p-1">Team Collaboration</Badge>
+                        <Badge className="p-1">Communication Skills</Badge>
+                    </div>
+                </ScrollAnimation>
+                
+                <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+                    <div className="flex flex-row gap-3 flex-wrap mt-10">
+                        <h3 className="text-sm">Additional Experience: </h3>
+                        <Badge className="p-1">Java, Spring Boot</Badge>
+                        <Badge className="p-1">Arduino</Badge>
+                        <Badge className="p-1">Python</Badge>
+                        <Badge className="p-1">R Scripting</Badge>
+                    </div>
+                </ScrollAnimation>
             </div>
 
+            <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+                <div className="flex justify-start items-start mt-10">
+                    <div className="flex flex-col items-start justify-start col-span-2">
+                        <h1 className="text-2xl font-bold uppercase mt-6">Work Experience</h1>
+                        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
+                            <div className="mt-8">
+                                <p className="mt-4 text-md text-left text-xs font-semibold">February 2023 - Present</p>
+                                <div className="border-l-6 pl-10 p-6 m-3 mb-0">
+                                    <h2 className="font-bold text-lg">Software Engineer</h2>
+                                    <p className="text-sm text-zinc-400">Tingcloud Documentary and Marketing Services OPC | Makati City, NCR</p>
+                                    <p className="text-sm text-zinc-300">ASP .NET Web Development, Documented-API Implementation</p>
+                                    <p className="text-xs mt-4 text-zinc-400"> ASP .NET Core 8.0, Entity Framework Core, Docker, Microservices, Code-First Approach, VueJS + ShadCN, Tailwind, TypeScript, Javascript, API Management, Repository-Service Pattern, Onion Architecture, Dependency Injection, AutoMapper</p>
+                                </div>
+                            </div>
+                        </ScrollAnimation>
+                        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
+                            <div className="mt-0">
+                                <p className="mt-4 text-md text-left text-xs font-semibold">June 2021 - February 2023</p>
+                                <div className="border-l-6 pl-10 p-6 m-3 mb-0">
+                                    <h2 className="font-bold text-lg">.NET Developer</h2>
+                                    <p className="text-sm text-zinc-400">KonganBuddies Marketing Inc. | Makati City, NCR</p>
+                                    <p className="text-sm text-zinc-300">ASP .NET Web Development, Documented-API Implementation</p>
+                                    <p className="text-xs mt-4 text-zinc-400"> ASP .NET Core 6.0, Microservices, VueJS + Quasar, API Management, Java/ Spring Boot, Repository-Service Pattern, Elastic Search, MySQL, MongoDB, Dependency Injection, AutoMapper, TelegramBot API, Redis</p>
+                                </div>
+                            </div>
+                        </ScrollAnimation>
+                        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
+                            <div className="mt-0">
+                                <p className="mt-4 text-md text-left text-xs font-semibold">October 2020 - June 2021</p>
+                                <div className="border-l-6 pl-10 p-6 m-3 mb-0">
+                                    <h2 className="font-bold text-lg">Graphics Designer</h2>
+                                    <p className="text-sm text-zinc-400">FilAm Software Technology | Angeles City Pampanga</p>
+                                    <p className="text-sm text-zinc-300">Worked as a graphics designer focusing on web design, poster creations, motion graphics design and product design</p>
+                                    <p className="text-xs mt-4 text-zinc-400">Adobe Softwares: Photoshop, Illustrator, After Effects and Premier Pro.</p>
+                                </div>
+                            </div>
+                        </ScrollAnimation>
+                        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
+                            <div className="mt-0">
+                                <p className="mt-4 text-md text-left text-xs font-semibold">October 2019 - June 2020</p>
+                                <div className="border-l-6 pl-10 p-6 m-3 mb-0">
+                                    <h2 className="font-bold text-lg">Data Engineer</h2>
+                                    <p className="text-sm text-zinc-400">FilAm Software Technology | Angeles City Pampanga</p>
+                                    <p className="text-sm text-zinc-300">Worked with the Data Science Team (Ecuiti Inc.) as a data engineer automating process for data analyzation.</p>
+                                    <p className="text-xs mt-4 text-zinc-400">R for Data Science, Google Ads, and Selenium</p>
+                                </div>
+                            </div>
+                        </ScrollAnimation>
+                        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
+                            <div className="mt-0">
+                                <p className="mt-4 text-md text-left text-xs font-semibold">May 2019 - October 2019</p>
+                                <div className="border-l-6 pl-10 p-6 m-3">
+                                    <h2 className="font-bold text-lg">Software Engineer</h2>
+                                    <p className="text-sm text-zinc-400">FilAm Software Technology | Angeles City Pampanga</p>
+                                    <p className="text-sm text-zinc-300"> Worked with a team focusing on agile development, application testing and maintenance of the web application built using Microsoft .Net Core</p>
+                                    <p className="text-xs mt-4 text-zinc-400">C#, ASP .NET Core, ASP .NET MVC, Entity Framework, Javascript / JQuery,
+                                    Front-end Designing (Bootstrap, CSS, etc), Object-Oriented Programming,
+                                    HTML, Data-Tables, Kendo UI, Database Design / SQL, Software Design
+                                    Patterns / Architectures, SOLID Principles, Azure DevOps, and Git</p>
+                                </div>
+                            </div>
+                        </ScrollAnimation>
+                    </div>
+                </div>
+            </ScrollAnimation>
+
             <div className="flex justify-start items-start mt-10">
-                <div className="flex flex-col items-start justify-start h-[86vh] col-span-2 mt-10">
+                <div className="flex flex-col items-start justify-start col-span-2">
                     <h1 className="text-2xl font-bold uppercase mt-6">Education</h1>
                     <div className="mt-8">
                         <p className="mt-4 text-md text-left text-xs font-semibold">2015 — 2019</p>
@@ -117,6 +219,10 @@ export default function About() {
             animation: slideIn 0.8s ease-out forwards;
             }
 
+            .slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
+            }
+
             .fade-in {
             animation: fadeIn 1s ease-out forwards;
             }
@@ -125,6 +231,17 @@ export default function About() {
             from {
                 opacity: 0;
                 transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            }
+
+            @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
             }
             to {
                 opacity: 1;

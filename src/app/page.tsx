@@ -38,9 +38,9 @@ export default function Home() {
         <div className="font-bold text-6xl text-left leading-20">
           <h1 className="hidden-before">Hi,</h1>
           <h1 className="hidden-before">
-            I am <span className="text-indigo-600">Jerez</span>.
+            I am <span className="text-white underline">Jerez</span>
           </h1>
-          <h1 className="hidden-before">Software Engineer.</h1>
+          <h1 className="hidden-before">Software Engineer</h1>
 
           <div className="hidden-before button-fade">
             <Button 
@@ -69,6 +69,11 @@ export default function Home() {
       </div>
 
       <style jsx>{`
+
+      .stroke-text {
+          -webkit-text-stroke: 2px white;
+          color: transparent;
+        }
         .hidden-before {
           opacity: 0;
           transform: translateX(-50px);

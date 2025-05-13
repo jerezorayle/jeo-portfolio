@@ -16,7 +16,7 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <div className="flex h-16 items-center justify-between mx-60">
+    <div className="flex h-16 items-center justify-between lg:mx-60 md:mx-40 sm:mx-20 xs:mx-10">
         <h6 className="text-md font-semibold">Jerez Orayle</h6>
         <NavigationMenu>
           <NavigationMenuList className="flex gap-4">
