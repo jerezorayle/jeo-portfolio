@@ -71,7 +71,7 @@ export default function About() {
                     <div className="hidden-before card-slide">
                         <Card className="w-[250px] border-none bg-background">
                             <CardHeader className="font-bold text-start text-6xl">
-                                <CardTitle>3+</CardTitle>
+                                <CardTitle>4+</CardTitle>
                                 <CardDescription className="text-lg">Certifications</CardDescription>
                             </CardHeader>
                         </Card>
@@ -232,6 +232,8 @@ export default function About() {
                                 <h2 className="font-bold text-lg">Bachelor of Science in Computer Science</h2>
                                 <p className="text-sm text-zinc-400">Holy Angel University | Angeles City Pampanga</p>
                                 <p className="text-sm text-zinc-300">Relevant courses included Object-Oriented Programming and Principles, Computer Optimizations and Algorithms, Full-stack Web Development</p>
+                                <p className="text-xs mt-4 text-zinc-400">Oct 2015 Award: Dean's List - Certificate of Academic Excellence</p>
+                                <p className="text-xs text-zinc-400">Mar 2016 Award: Dean's List - Certificate of Academic Excellence</p>
                             </div>
                         </div>
                     </div>
