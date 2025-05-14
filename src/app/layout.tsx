@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/constants/site-header";
+import { Button } from "@/components/ui/button";
+import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
+import SiteFooter from "@/constants/site-footer";
 
 const poppins = Poppins({
   weight: ["400", "500", "600"],
@@ -28,8 +31,10 @@ export default function RootLayout({
         </header>
 
         <div className="w-full">
-          <main className="lg:mx-60 md:mx-40 sm:mx-20 xs:mx-10 mt-14">{children}</main>
+          <main className="lg:mx-60 md:mx-40 sm:mx-20 xs:mx-10 mt-10">{children}</main>
         </div>
+
+        <SiteFooter />
       </body>
     </html>
   );

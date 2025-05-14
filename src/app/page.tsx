@@ -2,7 +2,7 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { ArrowRightFromLine, Github, Linkedin } from "lucide-react";
+import { ArrowRightFromLine, Facebook, Github, Instagram, Linkedin } from "lucide-react";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -63,9 +63,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex gap-4 justify-start items-center h-16">
         <Button size="icon"><Linkedin/></Button>
         <Button size="icon"><Github/></Button>
+        <Button size="icon"><Instagram/></Button>
+        <Button size="icon"><Facebook/></Button>
       </div>
 
       <style jsx>{`
@@ -74,6 +76,7 @@ export default function Home() {
           -webkit-text-stroke: 2px white;
           color: transparent;
         }
+
         .hidden-before {
           opacity: 0;
           transform: translateX(-50px);
