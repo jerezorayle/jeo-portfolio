@@ -5,6 +5,8 @@ import { SiteHeader } from "@/constants/site-header";
 import { Button } from "@/components/ui/button";
 import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
 import SiteFooter from "@/constants/site-footer";
+import CursorGlow from "@/constants/cursor-glow";
+import { FlashlightProvider } from "@/context/flashlight-context";
 
 const poppins = Poppins({
   weight: ["400", "500", "600"],
@@ -26,15 +28,20 @@ export default function RootLayout({
       <body
         className={`${poppins.className} antialiased dark`}
       >
-        <header className="w-full border-b bg-background flex-shrink-0">
-          <SiteHeader />
-        </header>
+        <FlashlightProvider>
+          <header className="w-full border-b bg-background flex-shrink-0">
+            <SiteHeader />
+          </header>
 
-        <div className="w-full">
-          <main className="lg:mx-60 md:mx-40 sm:mx-20 xs:mx-10 mt-10">{children}</main>
-        </div>
+          <div className="w-full">
+            <main className="lg:mx-60 md:mx-40 sm:mx-20 xs:mx-10 mt-10">
+              <CursorGlow />
+              {children}
+            </main>
+          </div>
 
-        <SiteFooter />
+          <SiteFooter />
+        </FlashlightProvider>
       </body>
     </html>
   );

@@ -99,7 +99,7 @@ export default function About() {
                     I also learned to organize my way to make things easier, usable and efficient in the long run - applying software engineering principles I learned throughout the years of experience in coding.
                 </p>
                 <blockquote className="mt-6 border-l-6 pl-6 italic text-sm">
-                    “When you fall in love with the process rather than the product, you don’t have to wait to give yourself permission to be happy. You can be satisfied anytime your system is running. And a system can be successful in many different forms, not just the one you first envision.” — James Clear [Atomic Habits]
+                    “When you fall in love with the process rather than the product, you don't have to wait to give yourself permission to be happy. You can be satisfied anytime your system is running. And a system can be successful in many different forms, not just the one you first envision.” — James Clear [Atomic Habits]
                 </blockquote>
             </div>
 
