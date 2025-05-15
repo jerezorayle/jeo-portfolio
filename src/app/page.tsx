@@ -61,7 +61,7 @@ export default function Home() {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.1, ease: "easeOut", delay: 2.9 }}>
             <div className="text-zinc-300 ">
-              <p className="text-xs font-thin">Free-style designed. Coded in <span className="font-bold">Visual Studio Code</span> by Yours Truly.</p>
+              <p className="text-xs font-thin">Freestyle designed. Coded in <span className="font-bold">Visual Studio Code</span> by Yours Truly.</p>
               <p className="text-xs font-thin">Made using <span className="font-bold">React</span>, <span className="font-bold">Next.js</span>, <span className="font-bold">ShadCN</span>, <span className="font-bold">Motion</span> and <span className="font-bold">Tailwind</span>.</p>
             </div>
           </motion.div>
