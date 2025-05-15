@@ -7,142 +7,177 @@ import { useEffect } from "react";
 import "animate.css/animate.compat.css"
 import ScrollAnimation from "react-animate-on-scroll";
 import { Scroll } from "lucide-react";
+import { motion } from "motion/react";
 
 export default function About() {
-
-    useEffect(() => {
-
-        const cover = document.querySelector(".cover-fade");
-        const image = document.querySelector(".image-fade");
-        const biography = document.querySelector(".biography-fade");
-        const bg = document.querySelector(".bg-slide");
-
-        const cards = document.querySelectorAll(".card-slide");
-        console.log(cards);
-
-        cards.forEach((card, index) => {
-            setTimeout(() => {
-                card.classList.add("slide-in-right");
-            }, index * 600);
-        });
-
-        setTimeout(() => {
-            cover?.classList.add("fade-in");
-        }, 100);
-
-        setTimeout(() => {
-            image?.classList.add("slide-in");
-        }, 200);
-
-        setTimeout(() => {
-            biography?.classList.add("fade-in");
-        }, 100);
-
-        setTimeout(() => {
-            bg?.classList.add("slide-in-right");
-        }, 100);
-    }, []);
-
     return (
         <div className="space-y-10">
             <div className="flex justify-between items-center gap-12">
-                <div className="border-r-18 border-b-18 border-2 border-white rounded-xl hidden-before cover-fade">
-                    <div className="relative w-[800px] h-[410px] rounded-lg m-4 hidden-before image-fade">
-                        <Image
-                            src="/cover.png"
-                            alt="Descriptive text"
-                            fill
-                            className="object-cover object-top rounded-xl z-10"
-                            unoptimized
-                            priority
-                        />
+                <motion.div
+                    initial={{ x: 30, opacity: 0, transform: "scale(0.95)" }}
+                    animate={{ x: 0, opacity: 1, transform: "scale(1)" }}
+                    exit={{ x: 30, opacity: 0, transform: "scale(0.95)" }}
+                    transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}>
+                    <div className="relative border-r-18 border-b-18 border-2 border-white rounded-xl hidden-before cover-fade">
+                        <motion.div
+                            initial={{ x: -30, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            exit={{ x: -30, opacity: 0 }}
+                            transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}>
+
+                            <div className="relative w-[800px] h-[410px] rounded-lg m-4 hidden-before image-fade">
+                                <Image
+                                    src="/cover.png"
+                                    alt="Descriptive text"
+                                    fill
+                                    className="object-cover object-top rounded-xl z-10"
+                                    unoptimized
+                                    priority
+                                />
+                            </div>
+                        </motion.div>
+                        <motion.div
+                            initial={{ x: 30, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            exit={{ x: 30, opacity: 0 }}
+                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+                            className="absolute top-13 left-52 z-[-1] hidden-before bg-cover-fade">
+                            <div className="h-90 w-90 bg-white rounded-full hidden-before bg-slide"></div>
+                        </motion.div>
                     </div>
-                    <div className="absolute h-90 w-90 bg-white rounded-full top-13 left-52 z-[-1] hidden-before bg-slide"></div>
-                </div>
+                </motion.div>
                 <div className="flex flex-col items-start justify-start gap-5">
-                    <div className="hidden-before card-slide">
+                    <motion.div
+                        initial={{ x: 40, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: 40, opacity: 0 }}
+                        transition={{ duration: 0.9, ease: "easeOut", delay: 1.1 }}>
+
                         <Card className="w-[250px] border-none bg-background">
                             <CardHeader className="font-bold text-start text-6xl">
-                                <CardTitle>10+</CardTitle>
+                                <CardTitle>
+                                    10
+                                    <motion.span
+                                        initial={{ y: -20, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        exit={{ y: -20, opacity: 0 }}
+                                        transition={{ duration: 0.9, ease: "easeOut", delay: 1.4 }}
+                                        className="inline-block"
+                                    >
+                                        +
+                                    </motion.span>
+                                </CardTitle>
                                 <CardDescription className="text-lg">Projects Completed</CardDescription>
                             </CardHeader>
                         </Card>
-                    </div>
-                    <div className="hidden-before card-slide">
+                    </motion.div>
+                    <motion.div
+                        initial={{ x: 40, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: 40, opacity: 0 }}
+                        transition={{ duration: 0.9, ease: "easeOut", delay: 1.6 }}>
                         <Card className="w-[250px] border-none bg-background">
                             <CardHeader className="font-bold text-start text-6xl">
-                                <CardTitle>4+</CardTitle>
+                                <CardTitle>4
+                                    <motion.span
+                                        initial={{ y: -20, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        exit={{ y: -20, opacity: 0 }}
+                                        transition={{ duration: 0.9, ease: "easeOut", delay: 1.9 }}
+                                        className="inline-block"
+                                    >
+                                        +
+                                    </motion.span></CardTitle>
                                 <CardDescription className="text-lg">Certifications</CardDescription>
                             </CardHeader>
                         </Card>
-                    </div>
-                    <div className="hidden-before card-slide">
+                    </motion.div>
+                    <motion.div
+                        initial={{ x: 40, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: 40, opacity: 0 }}
+                        transition={{ duration: 0.9, ease: "easeOut", delay: 2.1 }}>
                         <Card className="w-[250px] border-none bg-background">
                             <CardHeader className="font-bold text-start text-6xl">
-                                <CardTitle>6+</CardTitle>
+                                <CardTitle>6
+                                    <motion.span
+                                        initial={{ y: -20, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        exit={{ y: -20, opacity: 0 }}
+                                        transition={{ duration: 0.9, ease: "easeOut", delay: 2.4 }}
+                                        className="inline-block"
+                                    >
+                                        +
+                                    </motion.span>
+                                </CardTitle>
                                 <CardDescription className="text-lg">Years of Experience</CardDescription>
                             </CardHeader>
                         </Card>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
 
-            <div className="flex flex-col items-start justify-start hidden-before biography-fade">
-                <h1 className="text-2xl font-bold uppercase mt-6">Biography</h1>
-                <p className="mt-4 text-md text-left">
-                    When I was a kid, I had the passion of finding solutions to every problems and analyzing things.
-                    I used to be the one who they approach whenever there's an issue with something needed to get fixed.
-                    I loved the challenge of taking things apart and putting them back all together and I'd always enjoyed doing it.
-                </p>
-                <p className="mt-4 text-md text-left">
-                    Now, I can apply the same approach I learned whenever I program, code, and build web/software applications especially when there a problem arising (eg. bugs, errors, inaccuracy, etc).
-                    I also learned to organize my way to make things easier, usable and efficient in the long run - applying software engineering principles I learned throughout the years of experience in coding.
-                </p>
-                <blockquote className="mt-6 border-l-6 pl-6 italic text-sm">
-                    “When you fall in love with the process rather than the product, you don't have to wait to give yourself permission to be happy. You can be satisfied anytime your system is running. And a system can be successful in many different forms, not just the one you first envision.” — James Clear [Atomic Habits]
-                </blockquote>
-            </div>
+            <motion.div
+                initial={{ x: -30, opacity: 0, transform: "scale(0.95)" }}
+                animate={{ x: 0, opacity: 1, transform: "scale(1)" }}
+                exit={{ x: -30, opacity: 0, transform: "scale(0.95)" }}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}>
+                <div className="flex flex-col items-start justify-start hidden-before biography-fade">
+                    <h1 className="text-2xl font-bold uppercase mt-6">Biography</h1>
+                    <p className="mt-4 text-md text-left">
+                        When I was a kid, I had the passion of finding solutions to every problems and analyzing things.
+                        I used to be the one who they approach whenever there's an issue with something needed to get fixed.
+                        I loved the challenge of taking things apart and putting them back all together and I'd always enjoyed doing it.
+                    </p>
+                    <p className="mt-4 text-md text-left">
+                        Now, I can apply the same approach I learned whenever I program, code, and build web/software applications especially when there a problem arising (eg. bugs, errors, inaccuracy, etc).
+                        I also learned to organize my way to make things easier, usable and efficient in the long run - applying software engineering principles I learned throughout the years of experience in coding.
+                    </p>
+                    <blockquote className="mt-6 border-l-6 pl-6 italic text-sm">
+                        “When you fall in love with the process rather than the product, you don't have to wait to give yourself permission to be happy. You can be satisfied anytime your system is running. And a system can be successful in many different forms, not just the one you first envision.” — James Clear [Atomic Habits]
+                    </blockquote>
+                </div>
+            </motion.div>
 
-
-            <ScrollAnimation animateIn="slideInRight" animateOnce={true}>
+            <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
                 <h1 className="text-2xl font-bold uppercase">Skills</h1>
-            </ScrollAnimation>
-            <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
-                <div className="border-3 border-zinc-600 border-solid rounded-xl p-10">
-                    <ScrollAnimation animateIn="slideInRight" animateOnce={true}>
-                        <div className="flex flex-row gap-3 flex-wrap">
-                            <h3 className="text-sm">Strong Skills: </h3>
-                            <Badge className="p-1">C#, ASP .NET Core API, Entity Framework Core, LINQ, MVC</Badge>
-                            <Badge className="p-1">VueJS</Badge>
-                            <Badge className="p-1">ReactJS</Badge>
-                            <Badge className="p-1">Shadcn</Badge>
-                            <Badge className="p-1">Next.js, Node.js</Badge>
-                            <Badge className="p-1">HTML, CSS, JavaScript, TypeScript</Badge>
-                            <Badge className="p-1">Tailwind CSS, Bootstrap</Badge>
-                            <Badge className="p-1">SQL, NoSQL, MongoDB, ElasticSearch</Badge>
-                            <Badge className="p-1">JSON Web Tokens</Badge>
-                            <Badge className="p-1">Git, GitHub</Badge>
-                            <Badge className="p-1">Repository-Service Design Pattern, Onion Architecture, CQRS Design Pattern</Badge>
-                            <Badge className="p-1">Agile Methodologies</Badge>
-                            <Badge className="p-1">Object-Oriented Programming, Dependency Injection</Badge>
-                            <Badge className="p-1">RESTful APIs</Badge>
-                            <Badge className="p-1">Problem Solving</Badge>
-                            <Badge className="p-1">Analytical Thinking</Badge>
-                            <Badge className="p-1">Team Collaboration</Badge>
-                            <Badge className="p-1">Communication Skills</Badge>
-                        </div>
-                    </ScrollAnimation>
+                <ScrollAnimation animateIn="fadeIn" animateOnce={true} delay={0.2}>
+                    <div className="border-3 border-zinc-600 border-solid rounded-xl p-10 mt-6">
+                        <ScrollAnimation animateIn="fadeInDown" animateOnce={true}>
+                            <div className="flex flex-row gap-3 flex-wrap">
+                                <h3 className="text-sm">Strong Skills: </h3>
+                                <Badge className="p-1">C#, ASP .NET Core API, Entity Framework Core, LINQ, MVC</Badge>
+                                <Badge className="p-1">VueJS</Badge>
+                                <Badge className="p-1">ReactJS</Badge>
+                                <Badge className="p-1">Shadcn</Badge>
+                                <Badge className="p-1">Next.js, Node.js</Badge>
+                                <Badge className="p-1">HTML, CSS, JavaScript, TypeScript</Badge>
+                                <Badge className="p-1">Tailwind CSS, Bootstrap</Badge>
+                                <Badge className="p-1">SQL, NoSQL, MongoDB, ElasticSearch</Badge>
+                                <Badge className="p-1">JSON Web Tokens</Badge>
+                                <Badge className="p-1">Git, GitHub</Badge>
+                                <Badge className="p-1">Repository-Service Design Pattern, Onion Architecture, CQRS Design Pattern</Badge>
+                                <Badge className="p-1">Agile Methodologies</Badge>
+                                <Badge className="p-1">Object-Oriented Programming, Dependency Injection</Badge>
+                                <Badge className="p-1">RESTful APIs</Badge>
+                                <Badge className="p-1">Problem Solving</Badge>
+                                <Badge className="p-1">Analytical Thinking</Badge>
+                                <Badge className="p-1">Team Collaboration</Badge>
+                                <Badge className="p-1">Communication Skills</Badge>
+                            </div>
+                        </ScrollAnimation>
 
-                    <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
-                        <div className="flex flex-row gap-3 flex-wrap mt-6">
-                            <h3 className="text-sm">Additional Experience: </h3>
-                            <Badge className="p-1">Java, Spring Boot</Badge>
-                            <Badge className="p-1">Arduino</Badge>
-                            <Badge className="p-1">Python</Badge>
-                            <Badge className="p-1">R Scripting</Badge>
-                        </div>
-                    </ScrollAnimation>
-                </div>
+                        <ScrollAnimation animateIn="fadeInDown" animateOnce={true} delay={0.2}>
+                            <div className="flex flex-row gap-3 flex-wrap mt-6">
+                                <h3 className="text-sm">Additional Experience: </h3>
+                                <Badge className="p-1">Java, Spring Boot</Badge>
+                                <Badge className="p-1">Arduino</Badge>
+                                <Badge className="p-1">Python</Badge>
+                                <Badge className="p-1">R Scripting</Badge>
+                            </div>
+                        </ScrollAnimation>
+                    </div>
+                </ScrollAnimation>
             </ScrollAnimation>
 
             <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
@@ -232,65 +267,13 @@ export default function About() {
                                 <h2 className="font-bold text-lg">Bachelor of Science in Computer Science</h2>
                                 <p className="text-sm text-zinc-400">Holy Angel University | Angeles City Pampanga</p>
                                 <p className="text-sm text-zinc-300">Relevant courses included Object-Oriented Programming and Principles, Computer Optimizations and Algorithms, Full-stack Web Development</p>
-                                <p className="text-xs mt-4 text-zinc-400">Oct 2015 Award: Dean's List - Certificate of Academic Excellence</p>
-                                <p className="text-xs text-zinc-400">Mar 2016 Award: Dean's List - Certificate of Academic Excellence</p>
+                                <p className="text-xs mt-4 text-zinc-400">*Oct 2015 Award: Dean's List - Certificate of Academic Excellence</p>
+                                <p className="text-xs text-zinc-400">*Mar 2016 Award: Dean's List - Certificate of Academic Excellence</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </ScrollAnimation>
-
-            <style jsx>{`
-            .hidden-before {
-            opacity: 0;
-            transform: translateX(-50px);
-            }
-
-            .slide-in {
-            animation: slideIn 0.8s ease-out forwards;
-            }
-
-            .slide-in-right {
-            animation: slideInRight 0.8s ease-out forwards;
-            }
-
-            .fade-in {
-            animation: fadeIn 1s ease-out forwards;
-            }
-
-            @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-            }
-
-            @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-            }
-
-            @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-            }
-        `}</style>
         </div>
     );
 }
