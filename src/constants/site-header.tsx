@@ -26,7 +26,6 @@ export function SiteHeader() {
         <h6 className="text-md font-semibold">Jerez Orayle</h6>
         <Button onClick={toggle} variant="outline" className="text-xs font-thin">
           {enabled ? <Flashlight /> : <FlashlightOff />}
-          Flashlight
         </Button>
         <NavigationMenu>
           <NavigationMenuList className="flex gap-4">
