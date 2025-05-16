@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { ArrowRightFromLine, Facebook, Github, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
@@ -13,8 +12,10 @@ export default function Home() {
 
   return (
     <div>
-      <div className="grid grid-cols-2 items-center justify-center">
-        <div className="font-bold text-6xl text-left leading-20">
+      {/* Responsive section: image first on mobile, right on desktop */}
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full gap-8">
+        {/* Text Section */}
+        <div className="font-bold text-6xl text-left leading-20 w-full md:w-1/2">
           <motion.div
             initial={{ x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -23,6 +24,7 @@ export default function Home() {
           >
             <h1>Hi,</h1>
           </motion.div>
+
           <motion.div
             initial={{ x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -33,6 +35,7 @@ export default function Home() {
               I am <span className="text-white underline">Jerez</span>
             </h1>
           </motion.div>
+
           <motion.div
             initial={{ x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -68,7 +71,7 @@ export default function Home() {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.1, ease: "easeOut", delay: 2.9 }}
           >
-            <div className="text-zinc-300 ">
+            <div className="text-zinc-300">
               <p className="text-xs font-thin">
                 Freestyle designed. Coded in <span className="font-bold">Visual Studio Code</span> by Yours Truly.
               </p>
@@ -79,43 +82,55 @@ export default function Home() {
           </motion.div>
         </div>
 
+        {/* Image Section */}
         <motion.div
           initial={{ x: 30, y: 10, opacity: 0 }}
           animate={imgLoaded ? { x: 0, y: 0, opacity: 1 } : {}}
           exit={{ x: 30, y: 10, opacity: 0 }}
           transition={{ duration: 1.1, ease: "easeOut", delay: 1.3 }}
+          className="w-full md:w-1/2 flex justify-center md:justify-end"
         >
-          <div className="flex justify-end">
-            <div className="relative ">
-              <Avatar className="w-142 h-180 z-10 relative">
-                <Image
-                  src="/front-dark.png"
-                  alt="my-image"
-                  fill
-                  style={{ objectFit: "cover" }}
-                  onLoadingComplete={() => setImgLoaded(true)}
-                  priority
-                />
-              </Avatar>
-
-              {imgLoaded && (
-                <motion.div
-                  initial={{ x: -30, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: -30, opacity: 0 }}
-                  transition={{ duration: 1.1, ease: "easeOut", delay: 1.3 }}
-                  className="absolute top-10 left-8 z-0"
-                >
-                  <div className="bg-white h-140 w-110 rounded-full rotate-60 "></div>
-                </motion.div>
-              )}
+          <div className="relative">
+            <div className="relative z-10 overflow-hidden rounded-full 
+                            w-60 h-80 
+                            xs:w-50 xs:h-60
+                            sm:w-60 sm:h-80 
+                            md:w-[35rem] md:h-[45rem]">
+              <Image
+                src="/front-dark.png"
+                alt="my-image"
+                fill
+                style={{ objectFit: "cover" }}
+                onLoadingComplete={() => setImgLoaded(true)}
+                priority
+              />
             </div>
+
+            {imgLoaded && (
+              <motion.div
+                initial={{ x: -30, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -30, opacity: 0 }}
+                transition={{ duration: 1.1, ease: "easeOut", delay: 1.3 }}
+                className="absolute top-0 left-4 
+                  sm:top-3 sm:left-3 
+                  md:top-10 md:left-8 
+                  z-0"
+              >
+                <div className="bg-white rounded-full rotate-60 
+                                w-46 h-65 
+                                xs:w-25 xs:h-40
+                                sm:w-45 sm:h-60 
+                                md:w-[28rem] md:h-[35rem]">
+                </div>
+              </motion.div>
+            )}
           </div>
         </motion.div>
       </div>
 
-      {/* Social buttons */}
-      <div className="flex gap-4 justify-start items-center h-16">
+      {/* Social Buttons */}
+      <div className="flex gap-4 justify-start items-center h-16 mt-8">
         <Link href="https://www.linkedin.com/in/jerezorayle" target="_blank" rel="noopener noreferrer">
           <Button size="icon"><Linkedin /></Button>
         </Link>
@@ -130,7 +145,7 @@ export default function Home() {
         </Link>
       </div>
 
-      {/* Just to push the page up without footer */}
+      {/* Push space below */}
       <div className="flex justify-center items-center h-10"></div>
     </div>
   );
