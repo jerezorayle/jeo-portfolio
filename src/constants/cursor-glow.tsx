@@ -20,7 +20,7 @@ export default function CursorGlow() {
 
   return (
     <div
-      className="pointer-events-none fixed z-[-1] h-100 w-100 -translate-x-1/2 -translate-y-1/2 rounded-full bg-zinc-50 opacity-15 blur-[140px] transition-transform duration-75"
+      className="pointer-events-none fixed z-[-1] h-100 w-100 -translate-x-1/2 -translate-y-1/2 rounded-full bg-zinc-50 opacity-25 blur-[140px] transition-transform duration-75"
       style={{ left: `${pos.x}px`, top: `${pos.y}px` }}
     />
   );
