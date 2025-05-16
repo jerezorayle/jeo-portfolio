@@ -32,7 +32,7 @@ export default function RootLayout({
           </header>
 
           <div className="w-full">
-            <main className="lg:mx-60 md:mx-40 sm:mx-20 xs:mx-10 mt-10">
+            <main className="xl:mx-60 lg:mx-40 md:mx-24 sm:mx-10 mx-4 mt-10">
               <CursorGlow />
               {children}
             </main>

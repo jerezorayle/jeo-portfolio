@@ -29,7 +29,6 @@ export default function About() {
                                     alt="Descriptive text"
                                     fill
                                     className="object-cover object-top rounded-xl z-10"
-                                    unoptimized
                                     priority
                                 />
                             </div>
