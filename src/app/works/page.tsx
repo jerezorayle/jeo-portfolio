@@ -47,6 +47,13 @@ const works = [
         href: "https://github.com/jjjimenez100/LSE-HAU-Portal"
     },
     {
+        title: "Local Energy Management System",
+        description:
+            "A desktop based application for managing energy consumption and production data catering small businesses and homes.",
+        image: "/works-meralco.png",
+        tech: ["Python", "TesseractOCR", "PyQT6"],
+    },
+    {
         title: "Becric India",
         description:
             "A web and mobile application for a leading online casino in India.",
@@ -59,7 +66,6 @@ const works = [
             "Typescript",
             "Quasar",
         ],
-        href: "https://www.becric.com",
     },
     {
         title: "POMELO",
