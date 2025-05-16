@@ -116,18 +116,18 @@ export default function Home() {
 
       {/* Social buttons */}
       <div className="flex gap-4 justify-start items-center h-16">
-        <Button size="icon">
-          <Linkedin />
-        </Button>
-        <Button size="icon">
-          <Github />
-        </Button>
-        <Button size="icon">
-          <Instagram />
-        </Button>
-        <Button size="icon">
-          <Facebook />
-        </Button>
+        <Link href="https://www.linkedin.com/in/jerezorayle" target="_blank" rel="noopener noreferrer">
+          <Button size="icon"><Linkedin /></Button>
+        </Link>
+        <Link href="https://github.com/jerezorayle" target="_blank" rel="noopener noreferrer">
+          <Button size="icon"><Github /></Button>
+        </Link>
+        <Link href="https://instagram.com/javajeo" target="_blank" rel="noopener noreferrer">
+          <Button size="icon"><Instagram /></Button>
+        </Link>
+        <Link href="https://facebook.com/jerezorayle" target="_blank" rel="noopener noreferrer">
+          <Button size="icon"><Facebook /></Button>
+        </Link>
       </div>
 
       {/* Just to push the page up without footer */}
