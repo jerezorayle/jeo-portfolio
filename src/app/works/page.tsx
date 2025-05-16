@@ -20,7 +20,7 @@ const works = [
             "Free-style designed. Coded in Visual Studio Code by Yours Truly. Made using React, Next.js, ShadCN and Tailwind.",
         image: "/works-portfolio.png",
         tech: ["React", "Next.js", "Shadcn", "Tailwind"],
-        href: "https://github.com/jerezorayle/jeo-portfolio",
+        href: "https://jerezorayle.vercel.app",
     },
     {
         title: "Human Resources Information System [HRIS]",
