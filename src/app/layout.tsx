@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased dark`}
+        className={`${poppins.className} antialiased dark min-h-screen bg-background text-foreground flex flex-col justify-between`}
       >
         <FlashlightProvider>
           <header className="w-full border-b bg-background flex-shrink-0">

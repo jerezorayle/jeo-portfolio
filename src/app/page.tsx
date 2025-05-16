@@ -9,7 +9,7 @@ import { motion } from "motion/react";
 export default function Home() {
   return (
     <div>
-      <div className="grid grid-cols-2 items-center justify-center h-[76vh]">
+      <div className="grid grid-cols-2 items-center justify-center">
         <div className="font-bold text-6xl text-left leading-20">
           <motion.div
             initial={{ x: -30, opacity: 0 }}
@@ -95,6 +95,10 @@ export default function Home() {
         <Button size="icon"><Github /></Button>
         <Button size="icon"><Instagram /></Button>
         <Button size="icon"><Facebook /></Button>
+      </div>
+
+      {/* Just to push the page up without footer */}
+      <div className="flex justify-center items-center h-10">
       </div>
     </div>
   );
