@@ -1,12 +1,10 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
-import { useEffect } from "react";
 import "animate.css/animate.compat.css"
 import ScrollAnimation from "react-animate-on-scroll";
-import { Scroll } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function About() {
@@ -126,15 +124,15 @@ export default function About() {
                     <h1 className="text-2xl font-bold uppercase mt-6">Biography</h1>
                     <p className="mt-4 text-md text-left">
                         When I was a kid, I had the passion of finding solutions to every problems and analyzing things.
-                        I used to be the one who they approach whenever there's an issue with something needed to get fixed.
-                        I loved the challenge of taking things apart and putting them back all together and I'd always enjoyed doing it.
+                        I used to be the one who they approach whenever there&apos;s an issue with something needed to get fixed.
+                        I loved the challenge of taking things apart and putting them back all together and I&apos;d always enjoyed doing it.
                     </p>
                     <p className="mt-4 text-md text-left">
                         Now, I can apply the same approach I learned whenever I program, code, and build web/software applications especially when there a problem arising (eg. bugs, errors, inaccuracy, etc).
                         I also learned to organize my way to make things easier, usable and efficient in the long run - applying software engineering principles I learned throughout the years of experience in coding.
                     </p>
                     <blockquote className="mt-6 border-l-6 pl-6 italic text-sm">
-                        “When you fall in love with the process rather than the product, you don't have to wait to give yourself permission to be happy. You can be satisfied anytime your system is running. And a system can be successful in many different forms, not just the one you first envision.” — James Clear [Atomic Habits]
+                        “When you fall in love with the process rather than the product, you don&apos;t have to wait to give yourself permission to be happy. You can be satisfied anytime your system is running. And a system can be successful in many different forms, not just the one you first envision.” — James Clear [Atomic Habits]
                     </blockquote>
                 </div>
             </motion.div>
@@ -267,8 +265,8 @@ export default function About() {
                                 <h2 className="font-bold text-lg">Bachelor of Science in Computer Science</h2>
                                 <p className="text-sm text-zinc-400">Holy Angel University | Angeles City Pampanga</p>
                                 <p className="text-sm text-zinc-300">Relevant courses included Object-Oriented Programming and Principles, Computer Optimizations and Algorithms, Full-stack Web Development</p>
-                                <p className="text-xs mt-4 text-zinc-400">*Oct 2015 Award: Dean's List - Certificate of Academic Excellence</p>
-                                <p className="text-xs text-zinc-400">*Mar 2016 Award: Dean's List - Certificate of Academic Excellence</p>
+                                <p className="text-xs mt-4 text-zinc-400">*Oct 2015 Award: Dean&apos;s List - Certificate of Academic Excellence</p>
+                                <p className="text-xs text-zinc-400">*Mar 2016 Award: Dean&apos;s List - Certificate of Academic Excellence</p>
                             </div>
                         </div>
                     </div>
