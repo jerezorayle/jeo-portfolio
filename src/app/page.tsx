@@ -1,9 +1,8 @@
 "use client";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { ArrowRightFromLine, Facebook, Github, Instagram, Linkedin } from "lucide-react";
-import { useEffect } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 

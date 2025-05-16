@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/constants/site-header";
-import { Button } from "@/components/ui/button";
-import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
 import SiteFooter from "@/constants/site-footer";
 import CursorGlow from "@/constants/cursor-glow";
 import { FlashlightProvider } from "@/context/flashlight-context";

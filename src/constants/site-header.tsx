@@ -4,9 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
-import { Flashlight, FlashlightOff, Lightbulb, LightbulbOff } from "lucide-react";
+import { Flashlight, FlashlightOff } from "lucide-react";
 import { useFlashlight } from "@/context/flashlight-context";
 import { Button } from "@/components/ui/button";
 
